@@ -9,12 +9,17 @@
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
-
-
-    <div class="container body-content">
-        @RenderBody()
+    <div class="navbar navbar-inverse" role="navigation">
+        <a class="navbar-brand" href="#">Online Shopping Store</a>
+    </div> 
+    <div class="row panel">
+        <div id="categories" class="col-lg-3">
+            Categories
+        </div>
+        <div class="col-lg-7">
+            @RenderBody()
+        </div>
     </div>
-
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>

@@ -1,0 +1,15 @@
+﻿@model OnlineShoppingStore.Domain.Entities.Product
+
+<div class="well">
+
+    <h3><strong>  @Html.DisplayFor(modelItem => modelItem.Name)  </strong></h3>
+    <span>
+        Price:  @Html.DisplayFor(modelItem => modelItem.Price)
+    </span><br />
+    <span>
+        Category: @Html.DisplayFor(modelItem => modelItem.Category)
+    </span><br />
+    <span class="label label-primary">
+        @Html.DisplayFor(modelItem => modelItem.Description)
+    </span>
+</div>

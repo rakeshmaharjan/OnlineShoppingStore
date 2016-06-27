@@ -1,15 +1,22 @@
-﻿@model IEnumerable<OnlineShoppingStore.Domain.Entities.Product>
+﻿@model OnlineShoppingStore.WebUI.Models.ProductListViewModel
 
 @{
     ViewBag.Title = "List";
 }
 
-<h2>List</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+@foreach (var item in Model.Products)
+{
+   @Html.Partial("_ProductSummary",item)
+
+}
+
+<div class="btn-group pull-right" >
+
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x}))
+</div>
+
+@*<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)
@@ -48,4 +55,4 @@
     </tr>
 }
 
-</table>
+</table>*@
