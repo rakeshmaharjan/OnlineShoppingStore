@@ -19,11 +19,21 @@ namespace OnlineShoppingStore.WebUI
                 defaults: new { Controller = "Product", action = "List" }
                 );
 
+            routes.MapRoute(null, "", new { Controller = "Product", action = "List", category=(string) null, page=1 }
+                );
+
+            routes.MapRoute(null, "{category}", new { Controller = "Product", action = "List", category = (string)null, page = 1 }
+                );
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Product", action = "List", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(null, "{category}/Page{page}",
+                new { Controller = "Product", action = "List" },
+                new { page=@"\d+"}
+             );
         }
     }
 }
